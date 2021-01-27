@@ -16,6 +16,7 @@
 /client/build
 
 # misc
+.eslintcache
 
 # log files
 npm-debug.log*
