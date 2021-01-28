@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "build": "set INLINE_RUNTIME_CHUNK=false&&react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "dev-start": "nodemon index.js"
