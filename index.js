@@ -28,21 +28,15 @@ productionMiddleware(app);
 const __dirname = path
   .join(path.dirname(decodeURI(new URL(import.meta.url).pathname)))
   .replace(/^\\([A-Z]:\\)/, "$1");
-//console.log(">>>>>>>>>>>>>>>> 1 >>>", __dirname);
-console.log(">>>>>>>>>>>>>>>> 2 >>>", path.resolve());
 
 // serve static files from the React frontend app
 app.use(express.static("client/build"));
 // anything that doesn't match the above, send back index.html
 
 app.get("*", (req, res) => {
-  console.log(">>>>>>>>>>>>>>>>>>>>>>>>> 2.1 >>>>");
   //res.sendFile(path.resolve(path.resolve(), "client", "build", "index.html"));
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
-  console.log(">>>>>>>>>>>>>>>>>>>>>>>>> 2.2>>>>");
 });
-
-console.log(">>>>>>>>>>>>>>>>>>>>> 3");
 
 /*
 app.get("/", (req, res) => {

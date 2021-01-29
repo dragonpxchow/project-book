@@ -5,7 +5,12 @@ import compression from "compression"; //  compress the HTTP response sent back 
 
 const productionMiddleware = (app) => {
   // use these deployment middleware
-  app.use(helmet());
+  // this disables the `contentSecurityPolicy` middleware but keeps the rest.
+  app.use(
+    helmet({
+      contentSecurityPolicy: false,
+    })
+  );
   app.use(compression());
 };
 
