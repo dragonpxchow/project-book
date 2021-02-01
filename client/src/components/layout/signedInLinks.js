@@ -6,12 +6,11 @@ import { signOut } from "../../redux/actions/authActions";
 const SignedInLinks = (props) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
-  /*
+
   const initial = auth.user
     ? auth.user.firstName[0] + auth.user.lastName[0]
     : "";
-    */
-  const initial = "XY";
+
   return (
     <div>
       <ul className="right">

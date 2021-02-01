@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { SIGNIN_FAIL } from "./../../redux/actions/actionTypes";
 import { signIn } from "../../redux/actions/authActions";
 
@@ -23,7 +23,7 @@ const SignIn = ({ signIn, isAuthenticated, error, history }) => {
       // back to home page after registered as user successfully
       history.push("/");
     }
-  }, [error, isAuthenticated]);
+  }, [error, isAuthenticated, history]);
 
   // the useState() hook allows our component to hold its own internal state
   const [authError, setAuthError] = useState(null);

@@ -1,15 +1,18 @@
 import jwt from "jsonwebtoken";
-import config from "config";
+//import config from "config";
+//import json from "json-loader";
+//import { default as config } from "json-loader! ../config/default";
 
-//module.exports = function (req, res, next) {
 export default (req, res, next) => {
-  //if (!config.get("requiresAuth")) return next();
+  // better forget this
+  //if (!config.get("requiresAuth")) return next();   // es6/module could not read json file issue
+  //if (!process.env.REACT_APP_REQUIRES_AUTH === false) return next();
 
   let token = req.header("x-auth-token");
 
   /*
   console.log(
-    "authMiddleware User token >>>>>>>>>>>>>>>>>>>>",
+    "authMiddleware User token >>>>>>>>>>>>>>>>>>>>", 
     ">>>>" + token + "<<<"
   );
   */

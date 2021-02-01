@@ -8,7 +8,7 @@ const Navbar = () => {
   // here we declare what we want to take from the redux store with the useSelector() hook
   // every time one of these properties is updated on the store, our component will re-render to reflect it
   const auth = useSelector((state) => state.auth);
-  console.log("navbar auth >>>>>", auth);
+  //console.log("navbar auth >>>>>", auth);
   /*
   const error = useSelector((state) => state.error);
   console.log("navbar auth error >>>>>", error); 
